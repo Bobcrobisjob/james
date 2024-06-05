@@ -533,13 +533,14 @@ local based = 0
 local enemhealth = game.Players.LocalPlayer.Character.Humanoid.Health
 local runloop
 
+--[[
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
 	if input.KeyCode == Enum.KeyCode.Five or input.KeyCode == Enum.KeyCode.T or input.KeyCode == Enum.KeyCode.Three then
 		hounce = true
 	end
 end)
-
+]]--
 --[[
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
