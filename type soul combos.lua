@@ -84,6 +84,8 @@ local donttrack = {}
 local dodgethis = {}
 local notrealmove = {}
 
+local notthisparytho = {}
+
 local parrylist = {}
 local extendtheblock = {}
 local skillboxes = {}
@@ -267,6 +269,12 @@ end
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("ToraReach"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
+	end
+end
+
+for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
+	if child.Name:lower():find(("ToraReach"):lower()) and child.ClassName == "Animation" then
+		table.insert(notthisparytho, child.AnimationId)
 	end
 end
 
@@ -685,7 +693,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 						end
 
 						if (Attribute ~= "WeaponDrawn" and Attribute ~= "Idle" and Attribute ~= "Sprinting" and Attribute ~= "Blocking" and Attribute ~= "Dying" and Attribute ~= "Dashing" and Attribute ~= "Flashstep" and Attribute ~= "TrueStunned" and Attribute ~= "SoftStunned" and Attribute ~= "Walking" and Attribute ~= "Unconscious" and Attribute ~= "Food" and Attribute ~= "Executing" and Attribute ~= "Parrying" and Attribute ~= "Meditating" and Attribute ~= "Carrying" and Attribute ~= "ItemState") and not checkAnimations(notrealmove, Target:FindFirstChildOfClass("Humanoid"))  then
-							if not (game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil) and (Attribute == "Skill" or Attribute == "ShikaiSkill") then
+							if not (game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil) and (Attribute == "Skill" or Attribute == "ShikaiSkill") and not (checkAnimations(notthisparytho, Target:FindFirstChildOfClass("Humanoid"))) then
 								critical = false
 								moveset = false
 								movesetextended = false
