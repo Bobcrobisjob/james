@@ -786,7 +786,9 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 								VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 								if game.Players.LocalPlayer.Character:GetAttribute("CurrentState") ~= "Flashstep" and not (EffectsFolder:FindFirstChild("FlashstepClone")) and Attribute ~= "PostureBroken" then
 									if (not EffectsFolder:FindFirstChild("ParryEffect") and not EffectsFolder:FindFirstChild("BlockHitEffect")) then
-										VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
+										if MyDistance < 10 then
+											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
+										end
 									else
 										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 
