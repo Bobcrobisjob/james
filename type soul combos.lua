@@ -279,6 +279,13 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 end
 
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
+	if child.Name:lower():find(("RisingShot"):lower()) and child.ClassName == "Animation" then
+		table.insert(notthisparytho, child.AnimationId)
+	end
+end
+
+
+for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("VerticalDown"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
 	end
