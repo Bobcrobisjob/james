@@ -563,6 +563,14 @@ game.UserInputService.InputBegan:connect(function(input)
 	end
 end)
 ]]--
+
+local hounce = false
+game.UserInputService.InputBegan:connect(function(input)
+	if input.KeyCode == Enum.KeyCode.C then
+		hounce = true
+	end
+end)
+
 --[[
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
