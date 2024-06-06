@@ -549,22 +549,20 @@ game.UserInputService.InputBegan:connect(function(input)
 	end
 end)
 ]]--
-
+--[[
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
 	if input.KeyCode == Enum.KeyCode.Two or input.KeyCode == Enum.KeyCode.One or input.KeyCode == Enum.KeyCode.Tab or input.KeyCode == Enum.KeyCode.X then
 		hounce = true
 	end
 end)
+]]--
 
---[[
-	quincy
 game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.V or input.KeyCode == Enum.KeyCode.Six then
+	if input.KeyCode == Enum.KeyCode.V or input.KeyCode == Enum.KeyCode.CapsLock or input.KeyCode == Enum.KeyCode.Two then
 		hounce = true
 	end
 end)
-]]--
 
 --[[
 
@@ -784,6 +782,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 												VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 											end
 										else
+													--[[
 											if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
 												--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 												VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
@@ -791,6 +790,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											elseif MyDistance < 4.5 then
 												--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 											end
+											]]--
 										end
 
 									end
@@ -812,7 +812,8 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 										VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.R, false, game)
 										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 									end
-								else
+								else 
+									--[[
 									if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
 										--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 										VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
@@ -820,6 +821,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									elseif MyDistance < 4.5 then
 										--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 									end
+									]]--
 								end
 
 							else
