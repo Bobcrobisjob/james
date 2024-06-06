@@ -783,13 +783,13 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											end
 										else
 											if MyDistance < 4.5  then
-												if game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil then
+												if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
-												VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
+													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 												end
 												VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 											else
-												if not(game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
+												if (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 												end
@@ -826,13 +826,13 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									end
 								else 
 									if MyDistance < 4.5  then
-										if game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil then
+										if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
-										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
+											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 										end
 										VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 									else
-										if not(game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
+										if (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 										end
