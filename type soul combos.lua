@@ -559,7 +559,7 @@ end)
 ]]--
 
 game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.V or input.KeyCode == Enum.KeyCode.CapsLock or input.KeyCode == Enum.KeyCode.Two then
+	if input.KeyCode == Enum.KeyCode.V or input.KeyCode == Enum.KeyCode.CapsLock or input.KeyCode == Enum.KeyCode.Two or input.KeyCode == Enum.KeyCode.Six then
 		hounce = true
 	end
 end)
