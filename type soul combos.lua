@@ -718,7 +718,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 								critical = false
 								moveset = false
 								movesetextended = false
-								task.wait(0.188)
+								task.wait(0.184)
 								if not parry then
 									parry = true
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
