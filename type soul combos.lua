@@ -694,7 +694,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
 								end
-								task.wait(0.1)
+								task.wait(0.2)
 								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
 							elseif checkAnimations(extendtheblock, Target:FindFirstChildOfClass("Humanoid")) then
 								parry = false
