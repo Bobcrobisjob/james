@@ -685,7 +685,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 						end
 
 						if (Attribute ~= "WeaponDrawn" and Attribute ~= "Idle" and Attribute ~= "Sprinting" and Attribute ~= "Blocking" and Attribute ~= "Dying" and Attribute ~= "Dashing" and Attribute ~= "Flashstep" and Attribute ~= "TrueStunned" and Attribute ~= "SoftStunned" and Attribute ~= "Walking" and Attribute ~= "Unconscious" and Attribute ~= "Food" and Attribute ~= "Executing" and Attribute ~= "Parrying" and Attribute ~= "Meditating" and Attribute ~= "Carrying" and Attribute ~= "ItemState") and not checkAnimations(notrealmove, Target:FindFirstChildOfClass("Humanoid"))  then
-							if (not game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil and (Attribute == "Skill" or Attribute == "ShikaiSkill")) or checkAnimations(parrylist, Target:FindFirstChildOfClass("Humanoid")) then
+							if not (game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil) and (Attribute == "Skill" or Attribute == "ShikaiSkill") then
 								critical = false
 								moveset = false
 								movesetextended = false
