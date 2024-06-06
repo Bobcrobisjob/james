@@ -567,22 +567,22 @@ game.UserInputService.InputBegan:connect(function(input)
 	end
 end)
 ]]--
---[[
+
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
 	if input.KeyCode == Enum.KeyCode.Five or input.KeyCode == Enum.KeyCode.Y then
 		hounce = true
 	end
 end)
-]]--
 
+--[[
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
 	if input.KeyCode == Enum.KeyCode.C or input.KeyCode == Enum.KeyCode.Z or input.KeyCode == Enum.KeyCode.One or input.KeyCode == Enum.KeyCode.Two or input.KeyCode == Enum.KeyCode.Six then
 		hounce = true
 	end
 end)
-
+]]--
 --[[
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
@@ -809,34 +809,18 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 												VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 											end
 										else
+
 											if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
 												if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
-													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game) 
+													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
 												end
 											elseif MyDistance < 4.5 then
-												if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
-													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
-													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
-												end
 												if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 													VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 												end
-											else
-												if (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
-													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
-													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
-												end
 											end
-													--[[
-											if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
-												--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
-												VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
-												VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
-											elseif MyDistance < 4.5 then
-												--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
-											end
-											]]--
+
 										end
 
 									end
@@ -858,7 +842,8 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 										VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.R, false, game)
 										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 									end
-								else
+								else 
+									--[[
 									if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
 										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
@@ -878,15 +863,19 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 										end
 									end
-									--[[
-									if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
-										--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
-										VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
-										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
-									elseif MyDistance < 4.5 then
-										--VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
-									end
 									]]--
+									
+									if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
+										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
+											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
+											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
+										end
+									elseif MyDistance < 4.5 then
+										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
+											VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
+										end
+									end
+									
 								end
 
 							else
