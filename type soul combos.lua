@@ -171,7 +171,7 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 end
 
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
-	if child.Name:lower():find(("CatchingDragon"):lower()) and child.ClassName == "Animation" then
+	if child.Name:lower():find(("CatchingDragonI"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
 	end
 end
