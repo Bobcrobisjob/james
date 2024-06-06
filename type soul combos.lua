@@ -373,6 +373,12 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 end
 
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
+	if child.Name:lower():find(("pulse"):lower()) and child.ClassName == "Animation" then
+		table.insert(extendtheblock, child.AnimationId)
+	end
+end
+
+for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("WindA"):lower()) and child.ClassName == "Animation" then
 		table.insert(extendtheblock, child.AnimationId)
 	end
@@ -706,7 +712,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 								critical = false
 								moveset = false
 								movesetextended = false
-								task.wait(0.175)
+								task.wait(0.19)
 								if not parry then
 									parry = true
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
