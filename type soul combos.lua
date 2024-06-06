@@ -637,8 +637,8 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 							--if multipler < 0 or MyDistance < 50 then multipler = 0 end
 
 
-							local multipler1 = 0.2
-							local multipler2 = 0.2
+							local multipler1 = 0.25
+							local multipler2 = 0.25
 
 							--[[
 							if multipler1 < 0.145 or MyDistance < 15 then multipler1 = 0.145 end
