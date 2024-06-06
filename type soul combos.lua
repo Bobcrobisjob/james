@@ -2,10 +2,48 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-131
 
 local VirtualInputManager = Instance.new('VirtualInputManager')
 
+--[[
 function Target()
-	return game.Players.noeyel0905.Character
+	return game.Players.OatherThegoather.Character
 end
+]]--
 
+function Target()
+	local target = nil
+	local distance = math.huge
+
+	for i,v in next, workspace.Entities:GetChildren() do
+		if game.Players:FindFirstChild(v.Name) then
+			if game.Players.LocalPlayer:GetAttribute("Party") and game.Players[v.Name]:GetAttribute("Party") then
+				if v and v.Name~=game.Players.LocalPlayer.Name and v:FindFirstChild("HumanoidRootPart") and math.abs(v:FindFirstChild("HumanoidRootPart").Position.Y - game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y) <= math.huge and v:FindFirstChildOfClass("Humanoid") and v:FindFirstChildOfClass("Humanoid").Health>0 and v:GetAttribute("CurrentState") ~= "Unconscious" and game.Players.LocalPlayer:GetAttribute("Party") ~= game.Players[v.Name]:GetAttribute("Party") then
+					local plrdist = game.Players.LocalPlayer:DistanceFromCharacter(v:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p)
+					if plrdist < distance then
+						target = v
+						distance = plrdist
+					end
+				end
+			else
+				if v and v.Name~=game.Players.LocalPlayer.Name and v:FindFirstChild("HumanoidRootPart") and math.abs(v:FindFirstChild("HumanoidRootPart").Position.Y - game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y) <= math.huge and v:FindFirstChildOfClass("Humanoid") and v:FindFirstChildOfClass("Humanoid").Health>0 and v:GetAttribute("CurrentState") ~= "Unconscious" then
+					local plrdist = game.Players.LocalPlayer:DistanceFromCharacter(v:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p)
+					if plrdist < distance then
+						target = v
+						distance = plrdist
+					end
+				end
+			end
+		else
+			if v and v.Name~=game.Players.LocalPlayer.Name and not v.Name:lower():find(("FlashClone"):lower()) and not v.Name:lower():find(("Wolf"):lower()) and v:FindFirstChild("HumanoidRootPart") and math.abs(v:FindFirstChild("HumanoidRootPart").Position.Y - game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position.Y) <= math.huge and v:FindFirstChildOfClass("Humanoid") and v:FindFirstChildOfClass("Humanoid").Health>0 and v:GetAttribute("CurrentState") ~= "Unconscious" then
+				local plrdist = game.Players.LocalPlayer:DistanceFromCharacter(v:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p)
+				if plrdist < distance then
+					target = v
+					distance = plrdist
+				end
+			end
+		end
+	end
+
+	return target
+end
 
 local function XZ(V)
 	return Vector3.new(V.X, 0, V.Z)
@@ -598,8 +636,8 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 							--if multipler < 0 or MyDistance < 50 then multipler = 0 end
 
 
-							local multipler1 = 0.3
-							local multipler2 = 0.3
+							local multipler1 = 0.285
+							local multipler2 = 0.285
 
 							--[[
 							if multipler1 < 0.145 or MyDistance < 15 then multipler1 = 0.145 end
@@ -647,7 +685,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 						end
 
 						if (Attribute ~= "WeaponDrawn" and Attribute ~= "Idle" and Attribute ~= "Sprinting" and Attribute ~= "Blocking" and Attribute ~= "Dying" and Attribute ~= "Dashing" and Attribute ~= "Flashstep" and Attribute ~= "TrueStunned" and Attribute ~= "SoftStunned" and Attribute ~= "Walking" and Attribute ~= "Unconscious" and Attribute ~= "Food" and Attribute ~= "Executing" and Attribute ~= "Parrying" and Attribute ~= "Meditating" and Attribute ~= "Carrying" and Attribute ~= "ItemState") and not checkAnimations(notrealmove, Target:FindFirstChildOfClass("Humanoid"))  then
-							if checkAnimations(parrylist, Target:FindFirstChildOfClass("Humanoid")) then
+							if ( (not (game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil)) and (Attribute == "Skill" or Attribute == "ShikaiSkill")  ) or checkAnimations(parrylist, Target:FindFirstChildOfClass("Humanoid")) then
 								critical = false
 								moveset = false
 								movesetextended = false
