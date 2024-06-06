@@ -786,7 +786,9 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 												end
-												VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
+												if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
+													VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
+												end
 											else
 												if (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
@@ -829,7 +831,9 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
 										end
-										VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
+										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
+											VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
+										end
 									else
 										if (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
