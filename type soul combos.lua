@@ -489,7 +489,7 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 		table.insert(dodgethis, child.AnimationId)
 	end
 end
-
+--[[
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("DeathFlairA"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
@@ -507,7 +507,7 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 		table.insert(dodgethis, child.AnimationId)
 	end
 end
-
+]]--
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("CrazedBlitz"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
@@ -685,7 +685,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 						end
 
 						if (Attribute ~= "WeaponDrawn" and Attribute ~= "Idle" and Attribute ~= "Sprinting" and Attribute ~= "Blocking" and Attribute ~= "Dying" and Attribute ~= "Dashing" and Attribute ~= "Flashstep" and Attribute ~= "TrueStunned" and Attribute ~= "SoftStunned" and Attribute ~= "Walking" and Attribute ~= "Unconscious" and Attribute ~= "Food" and Attribute ~= "Executing" and Attribute ~= "Parrying" and Attribute ~= "Meditating" and Attribute ~= "Carrying" and Attribute ~= "ItemState") and not checkAnimations(notrealmove, Target:FindFirstChildOfClass("Humanoid"))  then
-							if ( (not (game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil)) and (Attribute == "Skill" or Attribute == "ShikaiSkill")  ) or checkAnimations(parrylist, Target:FindFirstChildOfClass("Humanoid")) then
+							if (( (not (game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil)) and (Attribute == "Skill" or Attribute == "ShikaiSkill")  ) or checkAnimations(parrylist, Target:FindFirstChildOfClass("Humanoid"))) and not checkAnimations(dodgethis, Target:FindFirstChildOfClass("Humanoid") then
 								critical = false
 								moveset = false
 								movesetextended = false
@@ -694,7 +694,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
 								end
-								task.wait(1)
+								task.wait(2)
 								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
 							elseif checkAnimations(extendtheblock, Target:FindFirstChildOfClass("Humanoid")) then
 								parry = false
