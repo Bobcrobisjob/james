@@ -572,12 +572,6 @@ game.UserInputService.InputBegan:connect(function(input)
 end)
 ]]--
 
-game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.V or input.KeyCode == Enum.KeyCode.CapsLock or input.KeyCode == Enum.KeyCode.Two or input.KeyCode == Enum.KeyCode.Six then
-		hounce = true
-	end
-end)
-
 --[[
 
 local BodyParts = {
@@ -795,7 +789,12 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 												VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 											end
 										else
-											if MyDistance < 4.5  then
+											if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
+												if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
+													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
+													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game) 
+												end
+											elseif MyDistance < 4.5 then
 												if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
@@ -839,8 +838,13 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 										VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.R, false, game)
 										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.R, false, game)
 									end
-								else 
-									if MyDistance < 4.5  then
+								else
+									if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
+										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
+											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
+											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game) 
+										end
+									elseif MyDistance < 4.5 then
 										if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
