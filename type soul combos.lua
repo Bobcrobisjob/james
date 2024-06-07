@@ -833,7 +833,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game) 
 												end
-											elseif MyDistance < 6 then
+											elseif MyDistance < 7 then
 												if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
@@ -878,7 +878,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game) 
 										end
-									elseif MyDistance < 6 then
+									elseif MyDistance < 7 then
 										if not (game.Players.LocalPlayer.Character:GetAttribute("LightAttackToggled") == nil) then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Tab, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Tab, false, game)
@@ -926,4 +926,3 @@ game.UserInputService.InputBegan:connect(function(input)
 		runLoop:Disconnect()
 	end
 end)
-
