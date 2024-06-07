@@ -838,7 +838,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											end
 										else
 											
-											if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
+											if MyDistance < 4.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
 												if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
@@ -896,7 +896,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									
 
 
-									if MyDistance < 3.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
+									if MyDistance < 4.5 and not game.Players.LocalPlayer.Character:GetAttribute("Nine") then
 										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
