@@ -736,7 +736,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
 								end
-								task.wait(0.2)
+								task.wait(0.3)
 								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 								VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 								task.wait()
