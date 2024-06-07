@@ -445,6 +445,12 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 end
 
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
+	if child.Name:lower():find(("CascadeRipple"):lower()) and child.ClassName == "Animation" then
+		table.insert(extendtheblock, child.AnimationId)
+	end
+end
+
+for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("FiringSquad"):lower()) and child.ClassName == "Animation" then
 		table.insert(extendtheblock, child.AnimationId)
 	end
@@ -593,7 +599,7 @@ end)
 
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C  then
+	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C then
 		hounce = true
 	end
 end)
