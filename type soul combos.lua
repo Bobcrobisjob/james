@@ -469,12 +469,6 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 end
 
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
-	if child.Name:lower():find(("Nameless"):lower()) and child.ClassName == "Animation" then
-		table.insert(dodgethis, child.AnimationId)
-	end
-end
-
-for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("Berserk"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
 	end
@@ -656,8 +650,8 @@ end)
 runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 	pcall(function()
 		based = based + deltaTime*1000 
-		--if based >= 0 then
-		if based >= 3.58 then
+		if based >= 1 then
+		--if based >= 3.58 then
 			if scriptOn then
 				if Target() then
 					local Target = Target()
@@ -742,7 +736,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
 								end
-								task.wait(0.2)
+								task.wait(0.15)
 								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 								VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 								task.wait()
