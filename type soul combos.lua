@@ -593,7 +593,7 @@ end)
 
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C or input.KeyCode == Enum.KeyCode.X then
+	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C  then
 		hounce = true
 	end
 end)
