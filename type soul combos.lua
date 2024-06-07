@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-13110"))()
+--loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-13110"))()
 
 local VirtualInputManager = Instance.new('VirtualInputManager')
 
@@ -599,7 +599,7 @@ end)
 
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C then
+	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C or input.KeyCode == Enum.KeyCode.T or input.KeyCode == Enum.KeyCode.G then
 		hounce = true
 	end
 end)
