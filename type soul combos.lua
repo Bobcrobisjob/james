@@ -696,7 +696,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 							
 							if hounce then
 								game:GetService("TweenService"):Create(workspace.CurrentCamera, TweenInfo.new(0), {CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, Vector3.new(Target.HumanoidRootPart.Position.X + Target.HumanoidRootPart.Velocity.X * 0.14, 
-								Target.HumanoidRootPart.Position.Y-0.295, Target.HumanoidRootPart.Position.Z + Target.HumanoidRootPart.Velocity.Z * 0.14)) }):Play()
+								Target.HumanoidRootPart.Position.Y-0.3, Target.HumanoidRootPart.Position.Z + Target.HumanoidRootPart.Velocity.Z * 0.14)) }):Play()
 								task.wait(0.15)
 								if game.Players.LocalPlayer.Character:GetAttribute("CurrentState") ~= "Skill" and game.Players.LocalPlayer.Character:GetAttribute("CurrentState") ~= "ShikaiSkill" then
 									hounce = false
