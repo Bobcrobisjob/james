@@ -593,7 +593,7 @@ end)
 
 local hounce = false
 game.UserInputService.InputBegan:connect(function(input)
-	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C or input.KeyCode == Enum.KeyCode.Y then
+	if input.KeyCode == Enum.KeyCode.Six or input.KeyCode == Enum.KeyCode.C or input.KeyCode == Enum.KeyCode.Y or input.KeyCode == Enum.KeyCode.T then
 		hounce = true
 	end
 end)
@@ -736,7 +736,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
 								end
-								task.wait(0.15)
+								task.wait(0.2)
 								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
 								VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 								task.wait()
