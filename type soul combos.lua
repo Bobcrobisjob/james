@@ -730,16 +730,19 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 								critical = false
 								moveset = false
 								movesetextended = false
-				
-								if not parry then
-									parry = true
+								if game.Players.LocalPlayer.Character:GetAttribute("CurrentState") ~= "Flashstep" and not (EffectsFolder:FindFirstChild("FlashstepClone")) and game.Players.LocalPlayer.Character:GetAttribute("CurrentState") ~= "Sprinting" then
+									if not parry then
+										parry = true
+										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
+										VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
+									end
+									task.wait(0.3)
+									
+									VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
+								else
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.F, false, game)
 									VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.LeftShift, false, game)
 								end
-								task.wait(0.2)
-								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
-								VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
-								VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.F, false, game)
 							elseif checkAnimations(extendtheblock, Target:FindFirstChildOfClass("Humanoid")) then
 								parry = false
 								critical = false
