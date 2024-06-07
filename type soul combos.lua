@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-13110"))()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-13110"))()
 
 local VirtualInputManager = Instance.new('VirtualInputManager')
 
