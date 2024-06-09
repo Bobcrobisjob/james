@@ -316,6 +316,12 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 end
 
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
+	if child.Name:lower():find(("KuyoShibari"):lower()) and child.ClassName == "Animation" then
+		table.insert(extendtheblock, child.AnimationId)
+	end
+end
+
+for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	if child.Name:lower():find(("GiftBall"):lower()) and child.ClassName == "Animation" then
 		table.insert(extendtheblock, child.AnimationId)
 	end
