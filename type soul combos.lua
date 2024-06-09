@@ -541,12 +541,12 @@ for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
 	end
 end
 ]]--
+
 for _, child in ipairs(game.ReplicatedStorage:GetDescendants()) do
-	if child.Name:lower():find(("CrazedBlitz"):lower()) and child.ClassName == "Animation" then
+	if child.Name:lower():find(("Kageoni"):lower()) and child.ClassName == "Animation" then
 		table.insert(dodgethis, child.AnimationId)
 	end
 end
-
 
 
 for _, child in ipairs(game.ReplicatedStorage.Assets.SkillAnimations.Healing:GetChildren()) do
