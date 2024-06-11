@@ -775,6 +775,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 								VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Q, false, game)
 								blockmove = true
 							elseif checkAnimations(skillboxes, Target:FindFirstChildOfClass("Humanoid")) then	
+								blockmove = false
 								if MyDistance <= 10 then
 									if MyDistance <= 4 then
 										VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
