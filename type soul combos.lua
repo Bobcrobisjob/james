@@ -668,7 +668,7 @@ end)
 runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 	pcall(function()
 		based = based + deltaTime*1000 
-		if based >= 1.25 then
+		if based >= 1.15 then
 		--if based >= 3.58 then
 			if scriptOn then
 				if Target() then
@@ -690,8 +690,8 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 							--if multipler < 0 or MyDistance < 50 then multipler = 0 end
 
 
-							local multipler1 = 0.25
-							local multipler2 = 0.25
+							local multipler1 = 0.2
+							local multipler2 = 0.2
 
 							--[[
 							if multipler1 < 0.145 or MyDistance < 15 then multipler1 = 0.145 end
@@ -850,7 +850,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 													VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
 													VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
 												end
-											elseif MyDistance < 4.5 then
+											elseif MyDistance < 6.5 then
 												if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 													VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 												end
@@ -908,7 +908,7 @@ runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 											VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.L, false, game)
 											VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.L, false, game)
 										end
-									elseif MyDistance < 4.5 then
+									elseif MyDistance < 6.5 then
 										if game.Players.LocalPlayer.Character:GetAttribute("AirDuration") == nil then
 											VirtualInputManager:SendMouseButtonEvent(0,0,0,true,game,0)
 										end
