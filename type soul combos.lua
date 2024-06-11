@@ -668,7 +668,7 @@ end)
 runLoop = game:GetService("RunService").Heartbeat:Connect(function(deltaTime)
 	pcall(function()
 		based = based + deltaTime*1000 
-		if based >= 1.5 then
+		if based >= 1.25 then
 		--if based >= 3.58 then
 			if scriptOn then
 				if Target() then
