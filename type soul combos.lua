@@ -30,13 +30,13 @@ if 14269621394 ~= game.PlaceId then
 
     --[["rec lobby shit"]]
 elseif game.PlaceId == 14269621394 then
-
+	task.wait(40)
 	function PersonToFollow()
 		local target = nil
 		local distance = math.huge
 
 		for i,v in next, game.Players:GetPlayers() do
-			if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 then
+			if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Team~=game.Players.LocalPlayer.Team then
 				local plrdist = game.Players.LocalPlayer:DistanceFromCharacter(v.Character:FindFirstChildOfClass('Humanoid').RootPart.CFrame.p)
 				if plrdist < distance then
 					target = v
