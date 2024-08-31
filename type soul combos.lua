@@ -1,4 +1,5 @@
 repeat wait() until game:IsLoaded()
+print("executed")
 task.wait(50)
 local runloop
 local VirtualInputManager = Instance.new('VirtualInputManager')
