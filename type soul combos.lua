@@ -95,8 +95,17 @@ elseif game.PlaceId == 14269621394 then
 	function PersonToFollow()
 		local target = nil
 		local highestpoints = -1
+		local path
 
-		for i,b in next, game.Players.LocalPlayer.PlayerGui:FindFirstChild("Scoreboard.Ui").PickupStats.Team1:GetChildren() do
+		for _, child in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+			if child.Name:lower():find(("Scoreboard.Ui"):lower()) then
+				path = child
+				break
+			end
+		end
+
+
+		for i,b in next, path.PickupStats.Team1:GetChildren() do
 			if b.Name == "Stat_Card_Template" then
 				local v = game.Players[b:FindFirstChild("Player").Text]
 				if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Character:FindFirstChild("BallConnect") and v.Team ~= game.Players.LocalPlayer.Team and not v.Character:FindFirstChild("Currently_ShootingFreethrows") then
@@ -109,7 +118,7 @@ elseif game.PlaceId == 14269621394 then
 			end
 		end
 
-		for i,b in next, game.Players.LocalPlayer.PlayerGui:FindFirstChild("Scoreboard.Ui").PickupStats.Team2:GetChildren() do
+		for i,b in next, path.PickupStats.Team2:GetChildren() do
 			if b.Name == "Stat_Card_Template" then
 				local v = game.Players[b:FindFirstChild("Player").Text]
 				if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Character:FindFirstChild("BallConnect") and v.Team ~= game.Players.LocalPlayer.Team and not v.Character:FindFirstChild("Currently_ShootingFreethrows") then
