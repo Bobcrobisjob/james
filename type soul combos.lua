@@ -109,7 +109,7 @@ elseif game.PlaceId == 14269621394 then
 			if b.Name == "Stat_Card_Template" then
 				local v = game.Players[b:FindFirstChild("Player").Text]
 				if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Character:FindFirstChild("BallConnect") and v.Team ~= game.Players.LocalPlayer.Team and not v.Character:FindFirstChild("Currently_ShootingFreethrows") then
-					local points = tonumber(game.Players[b:FindFirstChild("PTS").Text])
+					local points = tonumber(b:FindFirstChild("PTS").Text)
 					if points >= highestpoints then
 						target = v
 						highestpoints = points
@@ -122,7 +122,7 @@ elseif game.PlaceId == 14269621394 then
 			if b.Name == "Stat_Card_Template" then
 				local v = game.Players[b:FindFirstChild("Player").Text]
 				if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Character:FindFirstChild("BallConnect") and v.Team ~= game.Players.LocalPlayer.Team and not v.Character:FindFirstChild("Currently_ShootingFreethrows") then
-					local points = tonumber(game.Players[b:FindFirstChild("PTS").Text])
+					local points = tonumber(b:FindFirstChild("PTS").Text)
 					if points >= highestpoints then
 						target = v
 						highestpoints = points
