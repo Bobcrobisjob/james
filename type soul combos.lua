@@ -108,7 +108,7 @@ elseif game.PlaceId == 14269621394 then
 		for i,b in next, path.PickupStats.Team1:GetChildren() do
 			if b.Name == "Stat_Card_Template" then
 				local v
-				if game.Players[b:FindFirstChild("Player").Text] then
+				if game.Players:FindFirstChild(b:FindFirstChild("Player").Text) then
 					v = game.Players[b:FindFirstChild("Player").Text]
 					if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Character:FindFirstChild("BallConnect") and v.Team ~= game.Players.LocalPlayer.Team and not v.Character:FindFirstChild("Currently_ShootingFreethrows") then
 						local points = tonumber(b:FindFirstChild("PTS").Text)
@@ -124,7 +124,7 @@ elseif game.PlaceId == 14269621394 then
 		for i,b in next, path.PickupStats.Team2:GetChildren() do
 			if b.Name == "Stat_Card_Template" then
 				local v
-				if game.Players[b:FindFirstChild("Player").Text] then
+				if game.Players:FindFirstChild(b:FindFirstChild("Player").Text)  then
 					v = game.Players[b:FindFirstChild("Player").Text]
 					if v and v.Character and v~=game.Players.LocalPlayer and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChildOfClass("Humanoid") and v.Character:FindFirstChildOfClass("Humanoid").Health>0 and v.Character:FindFirstChild("BallConnect") and v.Team ~= game.Players.LocalPlayer.Team and not v.Character:FindFirstChild("Currently_ShootingFreethrows") then
 						local points = tonumber(b:FindFirstChild("PTS").Text)
