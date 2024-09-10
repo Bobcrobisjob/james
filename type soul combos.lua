@@ -3,6 +3,7 @@ print("executed")
 task.wait(5)
 local runloop
 local VirtualInputManager = Instance.new('VirtualInputManager')
+VirtualInputManager:SendKeyEvent(true, "Backquote", false, game)
 
 
 
