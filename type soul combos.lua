@@ -1,10 +1,9 @@
 repeat wait() until game:IsLoaded()
 print("executed")
-
+task.wait(5)
 local runloop
 local VirtualInputManager = Instance.new('VirtualInputManager')
-	VirtualInputManager:SendKeyEvent(false, "Backquote", false, game)
-				VirtualInputManager:SendKeyEvent(true, "Backquote", false, game)
+VirtualInputManager:SendKeyEvent(true, "Backquote", false, game)
 
 
 print("auto rec center loaded")
@@ -34,7 +33,6 @@ if 14269621394 ~= game.PlaceId then
 
     --[["rec lobby shit"]]
 elseif game.PlaceId == 14269621394 then
-
 
 	local char = game.Players.LocalPlayer.Character
 
@@ -485,7 +483,7 @@ elseif game.PlaceId == 14269621394 then
 			StopOverall()
 			
 			if ClosestIB() then
-				if (goal.Position - ClosestIB().Position).Magnitude < 85 then
+				if (XZ(goal.Position) - XZ(ClosestIB().Position)).Magnitude < 100 then
 					MoveTo(ClosestIB().Position)
 				end
 			end
