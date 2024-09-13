@@ -34,7 +34,6 @@ if 14269621394 ~= game.PlaceId then
 
     --[["rec lobby shit"]]
 elseif game.PlaceId == 14269621394 then
-	task.wait(120)
 
 	local char = game.Players.LocalPlayer.Character
 
