@@ -1,4 +1,3 @@
-
 repeat wait() until game:IsLoaded()
 print("executed")
 task.wait(5)
