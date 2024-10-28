@@ -1,5 +1,6 @@
 
 task.wait(3)
+print("hi")
 local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function()
 	if queueteleport then
