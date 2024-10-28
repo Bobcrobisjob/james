@@ -1,12 +1,6 @@
 
 task.wait(3)
 
-local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-game:GetService("Players").LocalPlayer.OnTeleport:Connect(function()
-	if queueteleport then
-		queueteleport("loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bobcrobisjob/james/main/type%20soul%20combos.lua'),true))()")
-	end
-end)
 local b = settings();
 
 local debounce = true
