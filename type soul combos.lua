@@ -275,7 +275,7 @@ if loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bobcrobisjob/jame
         local speed = XZ(targetball.Velocity).Magnitude
         --print(speed)
         local bision = 75
-        local height = 10
+        local height = 8
         if speed > 200 then
             bision = 127
         elseif speed > 135.5 then
@@ -285,7 +285,7 @@ if loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bobcrobisjob/jame
         end
 
         if speed > 135.5 then
-            height = 13
+            height = 12.5
         end
 
         if speed > 160 then
