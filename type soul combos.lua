@@ -285,7 +285,7 @@ if loadstring(game:HttpGet(('https://raw.githubusercontent.com/Bobcrobisjob/jame
         end
 
         if speed > 135.5 then
-            height = 13.5
+            height = 13
         end
 
         if speed > 160 then
